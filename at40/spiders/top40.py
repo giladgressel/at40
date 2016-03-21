@@ -20,11 +20,16 @@ class Top40Spider(scrapy.Spider):
     start_urls = ['http://www.at40.com/top-40/2012/01']
 
     def parse(self, response):
-        print "here is what you got"
+        items = []
 
+        # get the artist_title expath and extract
         artists_titles = response.xpath("//*[@id='chartintlist']/tr[2]/td[1]/text()").extract()
         for a_i in artists_titles:
-            print a_i
+            item = At40Item()
+            item["artist_title"] = a_i
+            items.append(item)
+
+        return items
 
 
 
