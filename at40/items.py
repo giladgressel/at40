@@ -11,7 +11,6 @@ from scrapy.item import Item, Field
 
 class At40Item(Item):
     year = Field()
-    month = Field()
     week = Field()
     artist_title = Field()
 
