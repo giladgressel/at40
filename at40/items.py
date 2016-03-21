@@ -13,8 +13,8 @@ class At40Item(Item):
     year = Field()
     month = Field()
     week = Field()
-    artist = Field()
-    single_title = Field()
+    artist_title = Field()
+
 
     # define the fields for your item here like:
     # name = scrapy.Field()
